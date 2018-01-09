@@ -22,11 +22,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
     }
 
     @Override protected void onActivityLoaded() {
-        view.updateButton.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                Toast("HAHAHA");
-            }
-        });
+        view.updateButton.setOnClickListener(view1 -> Toast("HAHAHA"));
     }
 
 }
