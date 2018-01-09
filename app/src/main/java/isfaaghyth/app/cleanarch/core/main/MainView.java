@@ -1,6 +1,8 @@
 package isfaaghyth.app.cleanarch.core.main;
 
-import isfaaghyth.app.cleanarch.model.Home;
+import java.util.ArrayList;
+
+import isfaaghyth.app.cleanarch.model.Portfolio;
 
 /**
  * Created by isfaaghyth on 1/9/18.
@@ -8,6 +10,6 @@ import isfaaghyth.app.cleanarch.model.Home;
  */
 
 interface MainView {
-    void onSuccess(Home res);
+    void onSuccess(ArrayList<Portfolio> res);
     void onError(String msg);
 }

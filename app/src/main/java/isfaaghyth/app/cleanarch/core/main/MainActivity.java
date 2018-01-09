@@ -3,10 +3,12 @@ package isfaaghyth.app.cleanarch.core.main;
 import android.databinding.DataBindingUtil;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 import isfaaghyth.app.cleanarch.R;
 import isfaaghyth.app.cleanarch.base.BaseActivity;
 import isfaaghyth.app.cleanarch.databinding.ActivityMainBinding;
-import isfaaghyth.app.cleanarch.model.Home;
+import isfaaghyth.app.cleanarch.model.Portfolio;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresenter> implements MainView {
 
@@ -26,8 +28,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
         presenter.getHome();
     }
 
-    @Override public void onSuccess(Home res) {
-        Log.d("TAG", res.getMessage());
+    @Override public void onSuccess(ArrayList<Portfolio> res) {
+        for (int i=0; i<res.size(); i++) {
+            Log.e("TAG", res.get(i).getDesc());
+        }
     }
 
     @Override public void onError(String msg) {

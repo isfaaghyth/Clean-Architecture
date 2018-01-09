@@ -1,7 +1,9 @@
 package isfaaghyth.app.cleanarch.network;
 
+import java.util.ArrayList;
+
 import io.reactivex.Observable;
-import isfaaghyth.app.cleanarch.model.Home;
+import isfaaghyth.app.cleanarch.model.Portfolio;
 import retrofit2.Response;
 import retrofit2.http.GET;
 
@@ -12,6 +14,7 @@ import retrofit2.http.GET;
 
 public interface Routes {
 
-    @GET("/")
-    Observable<Response<Home>> getHome();
+    @GET("portfolio.php")
+    Observable<Response<ArrayList<Portfolio>>> getHome();
+
 }

@@ -19,7 +19,7 @@ android {
         dataBinding.enabled = true
 
         //generalString
-        buildConfigField("String", "MAIN_URL", "\"http://dhimasganteng.ga:4000\"")
+        buildConfigField("String", "MAIN_URL", "\"http://daeng-id-api.herokuapp.com/\"")
     }
 
     compileOptions {

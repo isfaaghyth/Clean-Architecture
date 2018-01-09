@@ -12,11 +12,11 @@ import isfaaghyth.app.cleanarch.network.Routes;
 
 public class BasePresenter<V> {
 
-    public V view;
+    protected V view;
     protected Routes service;
     private CompositeDisposable compositable;
 
-    public void attachView(V view) {
+    protected void attachView(V view) {
         this.view = view;
         service = Network.builder().create(Routes.class);
     }
