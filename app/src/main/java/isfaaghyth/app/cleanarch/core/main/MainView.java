@@ -5,5 +5,5 @@ package isfaaghyth.app.cleanarch.core.main;
  * github: @isfaaghyth
  */
 
-public interface MainView {
+interface MainView {
 }

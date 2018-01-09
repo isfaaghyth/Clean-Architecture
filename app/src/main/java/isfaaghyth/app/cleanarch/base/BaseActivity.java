@@ -14,18 +14,18 @@ abstract public class BaseActivity<T, P extends BasePresenter> extends AppCompat
 
     protected T view;
     protected P presenter;
-    protected abstract T view();
+    protected abstract T dataBinding();
     protected abstract int contentView();
     protected abstract P initPresenter();
     protected abstract void onActivityLoaded();
 
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        view = view();
-        binding();
+        view = dataBinding();
+        initialize();
     }
 
-    private void binding() {
+    private void initialize() {
         presenter = initPresenter();
         onActivityLoaded();
     }

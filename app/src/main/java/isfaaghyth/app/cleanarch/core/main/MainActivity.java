@@ -1,7 +1,6 @@
 package isfaaghyth.app.cleanarch.core.main;
 
 import android.databinding.DataBindingUtil;
-import android.view.View;
 
 import isfaaghyth.app.cleanarch.R;
 import isfaaghyth.app.cleanarch.base.BaseActivity;
@@ -13,7 +12,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
         return new MainPresenter(this);
     }
 
-    @Override protected ActivityMainBinding view() {
+    @Override protected ActivityMainBinding dataBinding() {
         return DataBindingUtil.setContentView(this, contentView());
     }
 
@@ -22,7 +21,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
     }
 
     @Override protected void onActivityLoaded() {
-        view.updateButton.setOnClickListener(view1 -> Toast("HAHAHA"));
+
     }
 
 }

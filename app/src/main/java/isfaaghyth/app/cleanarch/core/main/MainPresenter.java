@@ -7,9 +7,10 @@ import isfaaghyth.app.cleanarch.base.BasePresenter;
  * github: @isfaaghyth
  */
 
-public class MainPresenter extends BasePresenter<MainView> {
+class MainPresenter extends BasePresenter<MainView> {
 
-    public MainPresenter(MainView view) {
+    MainPresenter(MainView view) {
         super.attachView(view);
     }
+
 }
