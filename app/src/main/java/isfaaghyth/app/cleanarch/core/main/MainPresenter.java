@@ -13,4 +13,9 @@ class MainPresenter extends BasePresenter<MainView> {
         super.attachView(view);
     }
 
+    void getHome() {
+        subscribe(service.getHome()
+                .compose()
+                .subscribe());
+    }
 }

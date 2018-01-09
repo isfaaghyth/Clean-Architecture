@@ -12,10 +12,14 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        //multiDex, @TODO(max dexCount)
         multiDexEnabled true
 
         //dataBinding
         dataBinding.enabled = true
+
+        //generalString
+        buildConfigField("String", "MAIN_URL", "\"http://dhimasganteng.ga:4000\"")
     }
 
     compileOptions {
@@ -45,6 +49,16 @@ dependencies {
     //glide
     compile 'com.github.bumptech.glide:glide:4.5.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+
+    //reactive
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    //network
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+
+    //converter
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
 
     testCompile 'junit:junit:4.12'
 }

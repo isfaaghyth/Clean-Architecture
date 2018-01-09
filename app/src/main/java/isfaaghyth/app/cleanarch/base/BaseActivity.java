@@ -34,4 +34,5 @@ abstract public class BaseActivity<T, P extends BasePresenter> extends AppCompat
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
+
 }
