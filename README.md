@@ -24,12 +24,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
         return new MainPresenter(this);
     }
 
-    @Override protected ActivityMainBinding dataBinding() {
-        return DataBindingUtil.setContentView(this, contentView());
-    }
-
-    @Override protected int contentView() {
-        return R.layout.activity_main;
+    @Override protected ActivityMainBinding contentView() {
+        return DataBindingUtil.setContentView(this, R.layout.activity_main);
     }
 
     @Override protected void onCreated() {
