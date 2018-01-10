@@ -14,23 +14,23 @@ public class BasePresenter<V> {
 
     protected V view;
     protected Routes service;
-    private CompositeDisposable compositable;
+    private CompositeDisposable composite;
 
     protected void attachView(V view) {
         this.view = view;
         service = Network.builder().create(Routes.class);
     }
 
-    public void dettachView() {
+    protected void dettachView() {
         this.view = null;
-        if (compositable != null) {
-            compositable.clear();
+        if (composite != null) {
+            composite.clear();
         }
     }
 
     protected void subscribe(Disposable disposable) {
-        if (compositable == null) compositable = new CompositeDisposable();
-        compositable.add(disposable);
+        if (composite == null) composite = new CompositeDisposable();
+        composite.add(disposable);
     }
 
 }

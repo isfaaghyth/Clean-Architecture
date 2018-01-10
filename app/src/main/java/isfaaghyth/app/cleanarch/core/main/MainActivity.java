@@ -9,6 +9,7 @@ import isfaaghyth.app.cleanarch.R;
 import isfaaghyth.app.cleanarch.base.BaseActivity;
 import isfaaghyth.app.cleanarch.databinding.ActivityMainBinding;
 import isfaaghyth.app.cleanarch.model.Portfolio;
+import isfaaghyth.app.cleanarch.util.GlideAdapter;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresenter> implements MainView {
 
@@ -24,14 +25,18 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
         return R.layout.activity_main;
     }
 
-    @Override protected void onActivityLoaded() {
+    @Override protected void onCreated() {
         presenter.getHome();
     }
 
     @Override public void onSuccess(ArrayList<Portfolio> res) {
-        for (int i=0; i<res.size(); i++) {
-            Log.e("TAG", res.get(i).getDesc());
+        for (Portfolio p: res) {
+            view.txtTitle.setText(
+                    view.txtTitle.getText().toString() +
+                    p.getDesc() + " " + p.getTitle()
+            );
         }
+        GlideAdapter.load(view.imgTest, res.get(0).getImg());
     }
 
     @Override public void onError(String msg) {

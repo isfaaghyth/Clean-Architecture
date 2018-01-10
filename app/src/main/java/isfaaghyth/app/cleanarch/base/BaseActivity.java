@@ -17,7 +17,7 @@ abstract public class BaseActivity<T, P extends BasePresenter> extends AppCompat
     protected abstract T dataBinding();
     protected abstract int contentView();
     protected abstract P initPresenter();
-    protected abstract void onActivityLoaded();
+    protected abstract void onCreated();
 
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +27,15 @@ abstract public class BaseActivity<T, P extends BasePresenter> extends AppCompat
 
     private void initialize() {
         presenter = initPresenter();
-        onActivityLoaded();
+        onCreated();
     }
 
+    /**
+     * Toast, @TODO(Move to utils)
+     * @param message
+     */
     protected void Toast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
 
 }

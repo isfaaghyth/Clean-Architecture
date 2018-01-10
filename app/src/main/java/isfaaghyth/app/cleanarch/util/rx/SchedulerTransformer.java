@@ -23,7 +23,7 @@ import io.reactivex.SingleTransformer;
  * github: @isfaaghyth
  */
 
-public abstract class SchedulerTransformer<T> implements ObservableTransformer<T, T>,
+abstract class SchedulerTransformer<T> implements ObservableTransformer<T, T>,
                                                             SingleTransformer<T, T>,
                                                             MaybeTransformer<T,T>,
                                                             CompletableTransformer,
@@ -32,7 +32,7 @@ public abstract class SchedulerTransformer<T> implements ObservableTransformer<T
     private Scheduler subscribeOnScheduler;
     private Scheduler observeOnScheduler;
 
-    public SchedulerTransformer(Scheduler subscribeOnScheduler, Scheduler observeOnScheduler) {
+    SchedulerTransformer(Scheduler subscribeOnScheduler, Scheduler observeOnScheduler) {
         this.subscribeOnScheduler = subscribeOnScheduler;
         this.observeOnScheduler = observeOnScheduler;
     }

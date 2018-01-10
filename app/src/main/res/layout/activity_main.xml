@@ -3,10 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".core.main.MainActivity">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="20sp"/>
 
         <ImageView
             android:id="@+id/imgTest"
@@ -15,5 +23,5 @@
             android:layout_centerInParent="true"
             android:src="@mipmap/ic_launcher_round"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 </layout>

@@ -1,5 +1,7 @@
 package isfaaghyth.app.cleanarch.core.main;
 
+import android.util.Log;
+
 import isfaaghyth.app.cleanarch.base.BasePresenter;
 import isfaaghyth.app.cleanarch.util.rx.MainScheduler;
 
@@ -21,7 +23,16 @@ class MainPresenter extends BasePresenter<MainView> {
                     if (res.isSuccessful()) {
                         view.onSuccess(res.body());
                     }
-                }, err -> view.onError(err.getMessage()))
+                }, err -> {
+                    view.onError(err.getMessage());
+                }, () -> {
+                    dettachView();
+                }, disposable -> {
+                    if (disposable.isDisposed()) {
+                        Log.d("TAG", "masih di pake");
+                    }
+                })
         );
     }
+
 }
