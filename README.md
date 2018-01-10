@@ -2,7 +2,7 @@
 Android clean architecture with data binding. Based on MVP pattern.
 
 Clean Arch adalah turunan dari pola arsitektur model-view-presenter (MVP). Paradigma ini di buat dalam memaksimalkan `maintenable code`. Sehingga, hal-hal yang esensial sudah di bundle dalam satu package.
-Pola nya salam seperti MVP. Hanya saja saya coba refactor untuk menerapkan prinsip `clean code`. Lifecycle nya pun saya coba buat sedikit berbeda (tidak secara keseluruhan), baik Activity maupun Fragment.
+Pola nya salam seperti MVP. Hanya saja saya coba refactor untuk menerapkan prinsip "`clean code`". Lifecycle nya pun saya coba buat sedikit berbeda (tidak secara keseluruhan), baik Activity maupun Fragment.
 
 Kurang lebih paradigma nya seperti ini:
 
