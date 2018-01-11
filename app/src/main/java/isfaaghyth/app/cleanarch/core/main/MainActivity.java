@@ -3,7 +3,7 @@ package isfaaghyth.app.cleanarch.core.main;
 import android.databinding.DataBindingUtil;
 import android.util.Log;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import isfaaghyth.app.cleanarch.R;
 import isfaaghyth.app.cleanarch.base.BaseActivity;
@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
         presenter.getHome();
     }
 
-    @Override public void onSuccess(ArrayList<Portfolio> res) {
+    @Override public void onSuccess(List<Portfolio> res) {
         for (Portfolio p: res) {
             view.txtTitle.setText(
                     view.txtTitle.getText().toString() +

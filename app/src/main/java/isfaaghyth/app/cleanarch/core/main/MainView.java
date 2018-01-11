@@ -1,6 +1,6 @@
 package isfaaghyth.app.cleanarch.core.main;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import isfaaghyth.app.cleanarch.model.Portfolio;
 
@@ -10,6 +10,6 @@ import isfaaghyth.app.cleanarch.model.Portfolio;
  */
 
 interface MainView {
-    void onSuccess(ArrayList<Portfolio> res);
+    void onSuccess(List<Portfolio> res);
     void onError(String msg);
 }
