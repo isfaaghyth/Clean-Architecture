@@ -20,9 +20,7 @@ class MainPresenter extends BasePresenter<MainView> {
         subscribe(service.getHome()
                 .compose(new MainScheduler<>())
                 .subscribe(res -> {
-                    if (res.isSuccessful()) {
-                        view.onSuccess(res.body());
-                    }
+                    view.onSuccess(res);
                 }, err -> {
                     view.onError(err.getMessage());
                 }, () -> {
