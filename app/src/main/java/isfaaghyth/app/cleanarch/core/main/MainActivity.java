@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
     }
 
     @Override public void onError(Throwable msg) {
-        Toast("statusCode:" + ((HttpException) msg).code() + "\n" + msg.getMessage());
+        Toast("message:" + msg.getMessage());
     }
 
     //setup recyclerView
