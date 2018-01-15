@@ -1,5 +1,8 @@
 package isfaaghyth.app.cleanarch.model;
 
+import android.view.View;
+import android.widget.Toast;
+
 /**
  * Created by isfaaghyth on 1/9/18.
  * github: @isfaaghyth
@@ -20,5 +23,9 @@ public class Portfolio {
 
     public String getImg() {
         return img;
+    }
+
+    public void onClick(View v) {
+        Toast.makeText(v.getContext(), "test.", Toast.LENGTH_LONG).show();
     }
 }

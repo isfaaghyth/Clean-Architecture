@@ -24,7 +24,7 @@ class MainPresenter extends BasePresenter<MainView> {
                 }, err -> {
                     view.onError(err);
                 }, () -> {
-                    //dettachView();
+                    Log.d("getHome()", "finish.");
                 })
         );
     }
