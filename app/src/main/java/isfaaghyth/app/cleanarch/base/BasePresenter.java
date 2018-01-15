@@ -21,7 +21,7 @@ public class BasePresenter<V> {
         service = Network.builder().create(Routes.class);
     }
 
-    protected void dettachView() {
+    void dettachView() {
         this.view = null;
         if (composite != null) {
             composite.clear();

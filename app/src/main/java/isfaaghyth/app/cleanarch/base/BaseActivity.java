@@ -21,11 +21,11 @@ abstract public class BaseActivity<T, P extends BasePresenter> extends AppCompat
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         view = contentView();
-        initialize();
+        presenter = initPresenter();
     }
 
-    private void initialize() {
-        presenter = initPresenter();
+    @Override protected void onStart() {
+        super.onStart();
         onCreated();
     }
 
@@ -37,4 +37,8 @@ abstract public class BaseActivity<T, P extends BasePresenter> extends AppCompat
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        presenter.dettachView();
+    }
 }

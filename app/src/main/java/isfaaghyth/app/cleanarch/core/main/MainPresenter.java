@@ -22,13 +22,9 @@ class MainPresenter extends BasePresenter<MainView> {
                 .subscribe(res -> {
                     view.onSuccess(res);
                 }, err -> {
-                    view.onError(err.getMessage());
+                    view.onError(err);
                 }, () -> {
-                    dettachView();
-                }, disposable -> {
-                    if (disposable.isDisposed()) {
-                        Log.d("TAG", "masih di pake");
-                    }
+                    //dettachView();
                 })
         );
     }

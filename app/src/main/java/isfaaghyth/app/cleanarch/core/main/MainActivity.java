@@ -1,15 +1,21 @@
 package isfaaghyth.app.cleanarch.core.main;
 
 import android.databinding.DataBindingUtil;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 
+import com.github.nitrico.lastadapter.LastAdapter;
+
+import java.util.ArrayList;
 import java.util.List;
 
+import isfaaghyth.app.cleanarch.BR;
 import isfaaghyth.app.cleanarch.R;
 import isfaaghyth.app.cleanarch.base.BaseActivity;
 import isfaaghyth.app.cleanarch.databinding.ActivityMainBinding;
 import isfaaghyth.app.cleanarch.model.Portfolio;
 import isfaaghyth.app.cleanarch.util.GlideAdapter;
+import retrofit2.HttpException;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresenter> implements MainView {
 
@@ -23,19 +29,21 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
 
     @Override protected void onCreated() {
         presenter.getHome();
+        setupListPortfolio();
     }
 
     @Override public void onSuccess(List<Portfolio> res) {
-        for (Portfolio p: res) {
-            view.txtTitle.setText(
-                    view.txtTitle.getText().toString() +
-                    p.getDesc() + " " + p.getTitle()
-            );
-        }
-        GlideAdapter.load(view.imgTest, res.get(0).getImg());
+        new LastAdapter(res, BR.item)
+                .map(Portfolio.class, R.layout.item_portfolio)
+                .into(view.lstPortfolio);
     }
 
-    @Override public void onError(String msg) {
-        Log.e("TAG", msg);
+    @Override public void onError(Throwable msg) {
+        Toast("statusCode:"+((HttpException) msg).code()+"\n"+msg.getMessage());
+    }
+
+    //setup recyclerView
+    private void setupListPortfolio() {
+        view.lstPortfolio.setLayoutManager(new LinearLayoutManager(this));
     }
 }

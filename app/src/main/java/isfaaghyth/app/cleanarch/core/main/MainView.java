@@ -11,5 +11,5 @@ import isfaaghyth.app.cleanarch.model.Portfolio;
 
 interface MainView {
     void onSuccess(List<Portfolio> res);
-    void onError(String msg);
+    void onError(Throwable msg);
 }
