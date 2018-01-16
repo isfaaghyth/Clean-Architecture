@@ -2,6 +2,7 @@ package isfaaghyth.app.cleanarch.core.main;
 
 import java.util.List;
 
+import isfaaghyth.app.cleanarch.base.BaseView;
 import isfaaghyth.app.cleanarch.model.Portfolio;
 
 /**
@@ -9,7 +10,6 @@ import isfaaghyth.app.cleanarch.model.Portfolio;
  * github: @isfaaghyth
  */
 
-interface MainView {
+interface MainView extends BaseView {
     void onSuccess(List<Portfolio> res);
-    void onError(Throwable msg);
 }

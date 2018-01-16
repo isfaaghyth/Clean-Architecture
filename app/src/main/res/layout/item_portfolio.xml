@@ -6,6 +6,10 @@
         <variable
             name="item"
             type="isfaaghyth.app.cleanarch.model.Portfolio"/>
+
+        <variable
+            name="event"
+            type="isfaaghyth.app.cleanarch.util.ItemListener"/>
     </data>
 
     <LinearLayout

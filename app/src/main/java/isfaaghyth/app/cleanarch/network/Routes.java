@@ -13,7 +13,7 @@ import retrofit2.http.GET;
 
 public interface Routes {
 
-    @GET("portfolio.php")
+    @GET("portfolioo.php")
     Observable<List<Portfolio>> getHome();
 
 }

@@ -38,10 +38,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
                 .into(view.lstPortfolio);
     }
 
-    @Override public void onError(Throwable msg) {
-        Toast("message:" + msg.getMessage());
-    }
-
     //setup recyclerView
     private void setupListPortfolio() {
         view.lstPortfolio.setLayoutManager(new LinearLayoutManager(this));
