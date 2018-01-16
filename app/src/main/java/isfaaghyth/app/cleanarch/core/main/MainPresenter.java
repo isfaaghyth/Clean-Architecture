@@ -17,13 +17,17 @@ class MainPresenter extends BasePresenter<MainView> {
     }
 
     void getHome() {
+        view().showLoading();
         subscribe(service().getHome()
                 .compose(new MainScheduler<>())
                 .subscribe(res -> {
+                    view().hideLoading();
                     view().onSuccess(res);
                 }, err -> {
+                    view().hideLoading();
                     handleError(err);
                 }, () -> {
+                    view().hideLoading();
                     Log.d("getHome()", "finish.");
                 })
         );
