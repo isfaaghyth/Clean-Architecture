@@ -2,13 +2,11 @@ package isfaaghyth.app.cleanarch.core.main;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.github.nitrico.lastadapter.LastAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import isfaaghyth.app.cleanarch.BR;
@@ -16,8 +14,6 @@ import isfaaghyth.app.cleanarch.R;
 import isfaaghyth.app.cleanarch.base.BaseActivity;
 import isfaaghyth.app.cleanarch.databinding.ActivityMainBinding;
 import isfaaghyth.app.cleanarch.model.Portfolio;
-import isfaaghyth.app.cleanarch.util.GlideAdapter;
-import retrofit2.HttpException;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresenter> implements MainView {
 
@@ -40,8 +36,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
                 .into(view.lstPortfolio);
     }
 
-    public void onPortClicked(View view, Portfolio portfolio) {
-        Toast.makeText(this, "item:"+portfolio.getDesc(), Toast.LENGTH_SHORT).show();
+    //@TODO("tricky mode whahaha")
+    public void onPortClicked(View view) {
+        Portfolio portfolio = (Portfolio) view.getTag();
+        Toast.makeText(this, "item:"+portfolio.getTitle(), Toast.LENGTH_SHORT).show();
     }
 
     private void setup() {
