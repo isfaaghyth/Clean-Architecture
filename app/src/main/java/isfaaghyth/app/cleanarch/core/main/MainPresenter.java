@@ -26,9 +26,6 @@ class MainPresenter extends BasePresenter<MainView> {
                 }, err -> {
                     view().hideLoading();
                     handleError(err);
-                }, () -> {
-                    view().hideLoading();
-                    Log.d("getHome()", "finish.");
                 })
         );
     }
