@@ -29,7 +29,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
     }
 
     @Override protected void onCreated() {
-        //lakukan apapun disini
+        //do anything in here! or with android:onClick="doClick" and create doClick(view) method in this place.
         view.btnTest.onClickListener(v -> {
             Toast("Hi!");
         });
@@ -60,10 +60,6 @@ class MainPresenter extends BasePresenter<MainView> {
                     }
                 }, err -> {
                     view.onError(err.getMessage());
-                }, () -> {
-                    dettachView();
-                }, disposable -> {
-                    
                 })
         );
     }
