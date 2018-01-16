@@ -6,10 +6,9 @@
         <variable
             name="item"
             type="isfaaghyth.app.cleanarch.model.Portfolio"/>
-
         <variable
-            name="event"
-            type="isfaaghyth.app.cleanarch.util.ItemListener"/>
+            name="context"
+            type="isfaaghyth.app.cleanarch.core.main.MainActivity"/>
     </data>
 
     <LinearLayout
@@ -18,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:clickable="true"
-        android:onClick="@{v -> item.onClick(v, item)}"
+        android:onClick="@{v -> context.onPortClicked(v, item)}"
         android:foreground="?selectableItemBackground">
 
         <TextView

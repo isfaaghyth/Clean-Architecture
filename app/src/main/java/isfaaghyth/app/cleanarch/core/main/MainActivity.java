@@ -3,6 +3,8 @@ package isfaaghyth.app.cleanarch.core.main;
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import com.github.nitrico.lastadapter.LastAdapter;
 
@@ -29,7 +31,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
 
     @Override protected void onCreated() {
         presenter.getHome();
-        setupListPortfolio();
+        setup();
     }
 
     @Override public void onSuccess(List<Portfolio> res) {
@@ -38,8 +40,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
                 .into(view.lstPortfolio);
     }
 
-    //setup recyclerView
-    private void setupListPortfolio() {
+    public void onPortClicked(View view, Portfolio portfolio) {
+        Toast.makeText(this, "item:"+portfolio.getDesc(), Toast.LENGTH_SHORT).show();
+    }
+
+    private void setup() {
         view.lstPortfolio.setLayoutManager(new LinearLayoutManager(this));
     }
 }

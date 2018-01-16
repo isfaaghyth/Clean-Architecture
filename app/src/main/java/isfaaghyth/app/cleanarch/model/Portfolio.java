@@ -25,7 +25,4 @@ public class Portfolio {
         return img;
     }
 
-    public void onClick(View v, Portfolio p) {
-        Toast.makeText(v.getContext(), p.getTitle(), Toast.LENGTH_LONG).show();
-    }
 }
