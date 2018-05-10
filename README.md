@@ -13,7 +13,7 @@ Dan menggunakan pustaka dari:
 - [x] Retrofit2
 - [x] Android DataBinding
 - [x] Glide
-- [x] Retro->Lambda
+- [x] Retrolambda
 
 ## contoh activity
 
